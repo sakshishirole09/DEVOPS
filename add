@@ -1,15 +1,14 @@
+//Maven
 <properties>
   <maven.compiler.source>8</maven.compiler.source>
   <maven.compiler.target>8</maven.compiler.target>
 </properties>
 
-
-
 </dependencies>
 <build>
   <plugins>
     <plugin>
-    <groupId>org.codehause.mojo</groupId>
+    <groupId>org.codehause.mojo</groupId>    
     <artifactId>exec-maven-plugin</artifactId>
     <version>3.0.0</version>
     <executions>
@@ -26,3 +25,92 @@
 </plugins>
 </build>
 </project>
+
+mvn -version
+sudo apt update
+sudo apt install maven
+mvn archetype:generate -DgroupId=com.example -DartifactId=MyApp -DinterativeMode=false
+cd MyApp
+tree
+sudo apt install tree
+mvn compile
+mvn exec:java
+mvn package
+
+//Jenkins
+ngrok http 8080
+/github-webhook/
+sudo nautilus
+sudo chown -R jenkins:jenkins /var/www/html/folder_name
+cp -r * /var/www/html/folder_name/
+
+//Docker
+1.folder:my-web-server
+2.touch index.html
+3.touch Dockerfile
+4.In html folder=><!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Webpage</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .box {
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 8px #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Welcome to My Website</h1>
+
+    <div class="box">
+        <p>This is a simple HTML and CSS example.</p>
+    </div>
+
+</body>
+</html>
+
+5.in dockerfolder=>FROM httpd:2.4
+   COPY index.html  /usr/local/apache2/htdocs/
+6.In terminal=>sudo docker build -t my-web-server
+7.sudo docker run -p 8092:80 -d my-web-server
+8.open brower=>http//localhost:8092
+
+
+//Git
+mkdir my
+cd my
+git init
+git config --global user.name "sam"
+git config --global user.email "sam23@gmail.com"
+git config --list
+touch index.html
+git add index.html
+git status
+git diff
+git commit -m "s1"
+git log
+touch index.html
+git add index.html
+git log
